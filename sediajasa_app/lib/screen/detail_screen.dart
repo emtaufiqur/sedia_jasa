@@ -7,7 +7,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('name'),
+        title: Image.asset('Percobaan'),
       ),
     );
   }

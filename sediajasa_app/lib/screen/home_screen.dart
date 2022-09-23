@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sediajasa_app/screen/home_card.dart';
-import 'package:sediajasa_app/thema.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
