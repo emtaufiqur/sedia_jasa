@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sediajasa_app/background.dart';
 import 'package:sediajasa_app/screen/home_card.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,31 +10,21 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                alignment: Alignment.topRight,
-                image: AssetImage('assets/Oval.png'),
-              ),
-            ),
-          ),
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                alignment: Alignment.centerLeft,
-                image: AssetImage('assets/ovalKecil.png'),
-              ),
-            ),
-          ),
-          const MenuCard(),
+        children: const [
+          Background(),
+          MenuCard(),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(icon: Icon(Icons.home)),
-      //   ],
-      // ),
+      bottomNavigationBar: ConvexAppBar(
+        items: const [
+          TabItem(icon: Icons.home, title: 'Halaman'),
+          TabItem(icon: Icons.message, title: 'Pesan'),
+          TabItem(icon: Icons.notifications, title: 'Notifikasi'),
+          TabItem(icon: Icons.settings, title: 'Pengaturan'),
+        ],
+        // ignore: avoid_print
+        onTap: (int i) => print('click index=$i'),
+      ),
     );
   }
 }
